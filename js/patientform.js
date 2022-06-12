@@ -27,9 +27,9 @@ form.addEventListener('submit', (e) => {
     addressInput();
     birthDateInput();
     placeOBInput();
-    genderBtn();
     contactInput();
     emailInput();
+    genderBtn();
 
     selectedMedHistory();
     selectedSymptoms();
