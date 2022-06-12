@@ -5,7 +5,8 @@
 body {
     margin: 0;
     font-family: helvetica;
-    background-image: url(/19366.jpg);
+    background-image: url(../19366.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
