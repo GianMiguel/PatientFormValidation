@@ -5,11 +5,9 @@
 body {
     margin: 0;
     font-family: helvetica;
-    background-image: url(images/19366.jpg);
-    background-repeat: no-repeat;
+    background-image: url(/images/19366.jpg);
     background-size: cover;
 }
-
 
 form {
     display: grid;
