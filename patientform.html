@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Form</title>
+    <link rel="stylesheet" href="css/patientform.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Patient Medical Form</h1>
+        </header>
+
+        <form id="form">
+            <h3>Personal Information</h3>
+            <div class="personal">
+                <div class="firstrow">
+                    <label for="name">Name</label>
+                    <div class="input-control">
+                        <input type="text" name="name" id="fName" placeholder="First Name">
+                        <small> Error Message</small>
+                    </div>
+                    
+                    <input type="text" name="name" id="mName" placeholder="Middle Name">
+
+                    <div class="input-control">
+                        <input type="text" name="name" id="lName" placeholder="Last Name">
+                        <small> Error Message</small>
+                    </div>
+                    
+                </div>
+
+                <div class="secondrow">
+                    <label for="address">Address</label>
+                    <div class="input-control">
+                        <input type="text" name="address" id="address" placeholder="Current Address">
+                        <small> Error Message</small>
+                    </div>
+                </div>
+                <!-- <div class="input-control"><small> Error Message</small></div> -->
+                <div class="thirdrow">
+                    <div class="birthdate">
+                        <label for="birthdate">Birthdate</label>
+                        <div class="input-control">
+                            <input type="date" name="birthdate" id="bdate">
+                            <small> Error Message</small>
+                        </div>
+                    </div>
+                    <div class="pob">
+                        <label for="pob">Place of Birth</label>
+                        <div class="input-control">
+                            <input type="text" name="pob" id="pob" >
+                            <small> Error Message</small>
+                        </div>
+                        
+                    </div>
+                    <div class="gender">
+                        <label for="gender">Gender</label>
+                        <input type="radio" name="gender" value="Male">
+                        <label for="male">Male</label>
+                        <input type="radio" name="gender" value="Female">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+
+                <div class="fourthrow">
+                    <label for="contact">Contact Number</label>
+                    <div class="input-control">
+                        <input type="text" name="contact" id="contact" placeholder="0000-0000-000">
+                        <small> Error Message</small>
+                    </div>
+                        
+                    <label for="email">Email Address</label>
+                    <div class="input-control">
+                        <input type="text" name="email" id="email" placeholder="example@example.com">
+                        <small> Error Message</small>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <h3>Medical Information</h3>
+            <div class="medical">      
+                <div class="medHistory">
+                    <label for="history">Medical History:</label>
+                    <span><input type="checkbox" name="medHistory" value="Asthma"><label for="Asthma">Asthma</label></span>
+                    <span><input type="checkbox" name="medHistory" value="Cancer"><label for="Cancer">Cancer</label></span>
+                    <span><input type="checkbox" name="medHistory" value="Cardiac Arrest"><label for="Cardiac Arrest">Cardiac Arrest</label></span>
+                    <span><input type="checkbox" name="medHistory" value="Diabetes"><label for="Diabetes">Diabetes</label></span>
+                    <span><input type="checkbox" name="medHistory" value="Epilepsy"><label for="Epilepsy">Epilepsy</label></span>
+                    <span><input type="checkbox" name="medHistory" value="Hypertension"><label for="Hypertension">Hypertension</label></span>
+                    <span><input type="checkbox" name="medHistory" value="Psychiatric Disorder"><label for="Psychiatric Disorder">Psychiatric Disorder</label></span>
+                    <span><input type="checkbox" name="medHistory" value="Others"><label for="Others">Others</label></span>
+                    <span><input type="checkbox" name="medHistory" value="None"><label for="None">None</label></span>
+                </div>
+
+                <div class="symptoms">
+                    <label for="symptoms">Current Symptoms:</label>
+                    <div>
+                    <select name="symptoms" id="symptoms" multiple>
+                        <option value="chest-pain">Chest Pain</option>
+                        <option value="respiratory">Respiratory</option>
+                        <option value="hermatological">Hematological</option> 
+                        <option value="lymphatic">Lymphatic</option>
+                        <option value="neurological">Neurological</option> 
+                        <option value="psychiatric">Psychiatric</option> 
+                        <option value="gastrointestinal">Gastrointestinal</option> 
+                        <option value="weight-loss">Weight Loss</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="medication">
+                    <label for="medication">Are you currently taking medication?</label>
+                    <div>
+                        <input type="radio" name="medication" id="medYes" onclick="enableTextMed()"><label for="medYes">Yes</label>
+                        <input type="radio" name="medication" id="medNo" onclick="enableTextMed()"><label for="medNo">No</label>
+                    </div>
+                    <input type="text" name="textMed" id="textMed" placeholder="If yes, please list it here" disabled>
+                </div>
+            </div>
+
+            <button id="modalBtn">Submit</button> 
+        </form>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modalContainer">
+            <div  class="modal-content">
+                <div class="header">Confirm Patient Details <span class="close">&times;</span></div>
+                <div class="personalHeader">Personal Information</div>
+                <div class="personalTags">
+                    <div>Full Name:</div>
+                    <div>Address:</div>
+                    <div>Birthdate:</div>
+                    <div>Place of Birth:</div>
+                    <div>Gender:</div>
+                    <div>Contact Number:</div>
+                    <div>Email Address:</div>
+                </div>
+
+                <div class="personalData">
+                    <div id="nameOutput"></div>
+                    <div id="addressOutput"></div>
+                    <div id="birthdateOutput"></div>
+                    <div id="pobOutput"></div>
+                    <div id="genderOutput"></div>
+                    <div id="contactOutput"></div>
+                    <div id="emailOutput"></div>
+                </div>
+
+                <div class="medicalHeader">Medical Information</div>
+                <div class="medicalTags"> 
+                    <div>Medical History:</div>
+                    <div>Current Symptoms:</div>
+                    <div>Medication:</div>
+                </div>
+
+                <div class="medicalData">
+                    <div id="medHisOutput"></div>
+                    <div id="symptomsOutput"></div>
+                    <div id="medicationOutput"></div>
+                </div>
+
+                <div class="footer"><button id="confirm" disabled>(to be continued)</button></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="js/patientform.js"></script>
+    
+</body>
+</html>

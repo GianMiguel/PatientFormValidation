@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Login</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <form class="form" id="form">
+        <div class="login">
+            <p>Login to your Account</p>
+            <div class="form-control">
+                <input type="text" name="username" id="username" placeholder="Email or Username"> <br>
+                <small>Error Message</small>
+            </div>
+            
+            <div class="form-control">
+                <input type="password" name="password" id="password" placeholder="Password"> <br>
+                <small>Error Message</small>
+            </div>
+            
+            <button id="signin">Sign In</button>
+        </div>
+
+        <div class="register">
+            <p>New Here?</p>
+            <input type="button" id="signup" onclick="location.href='patientform.html';" value="Sign Up"></input>
+        </div>
+    </form>
+
+    <script src="/js/login.js"></script>  
+</body>
+</html>
